@@ -1,0 +1,58 @@
+#tickers-grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stock-box{
+    width: 200px;
+    height: 2000px;
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    transition: background-color 0.5s;
+    background-color: #eee;
+}
+.light-red{
+    color: #FFCCCC;
+}
+
+.dark-red{
+    color: #FF0000;
+}
+.gray{
+    color: #808080;
+}
+.dark-green{
+    color: #008000;
+}
+.light-green{
+    color: #CCFFCC;
+}
+
+#tickers-grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stock-box{
+    width: 200px;
+    height: 2000px;
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    transition: background-color 0.5s;
+    background-color: #eee;
+}
+
+.red-flash{
+    transition: background-color 1s;
+    background-color: #ffcccc !important;
+}
+.green-flash{
+    transition: background-color 1s;
+    background-color: #ccffcc !important;
+}
+.gray-flash{
+    transition: background-color 1s;
+    background-color: #808080 !important;
+}
