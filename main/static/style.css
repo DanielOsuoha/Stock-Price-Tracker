@@ -1,17 +1,28 @@
 #tickers-grid{
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .stock-box{
     width: 200px;
-    height: 2000px;
+    height: 200px; /* Corrected height */
     border: 1px solid #333;
     margin: 10px;
-    padding: 10px;
-    transition: background-color 0.5s;
-    background-color: #eee;
+    padding: 15px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s, box-shadow 0.3s;
+    border-radius: 5px;
 }
+
+.stock-box:hover {
+    background-color: #728aa1;
+    color: white !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.452);
+}
+
 .dark-red{
     color: #e20101;
 }
@@ -20,7 +31,7 @@
     color: #e77676;
 }
 .gray{
-    color: #808080;
+    color: #b3abab;
 }
 .dark-green{
     color: #018c01;
@@ -34,16 +45,6 @@
     flex-wrap: wrap;
 }
 
-.stock-box{
-    width: 200px;
-    height: 2000px;
-    border: 1px solid #333;
-    margin: 10px;
-    padding: 10px;
-    transition: background-color 0.5s;
-    background-color: #eee;
-}
-
 .red-flash{
     transition: background-color 1s;
     background-color: #ffcccc !important;
@@ -54,5 +55,5 @@
 }
 .gray-flash{
     transition: background-color 1s;
-    background-color: #808080 !important;
+    background-color: #a59f9f !important;
 }

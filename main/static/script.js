@@ -1,6 +1,6 @@
 var tickers = JSON.parse(localStorage.getItem("tickers")) || [];
 var lastPrices = {};
-var counter = 30;
+var counter = 10;
 
 function startUpdateCycle(){
     updatePrices();
