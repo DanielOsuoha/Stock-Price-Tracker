@@ -48,7 +48,7 @@ function addTickerTOGrid(ticker){
     var tickerDiv = $(`<div class="stock-box" id="${ticker}"></div>`);
     tickerDiv.append(`<h3>${ticker}</h3>`);
     tickerDiv.append(`<p id="${ticker}-price"></p> <p id="${ticker}-pct"></p>`);
-    tickerDiv.append(`<button class="remove-btn" data-ticker="${ticker}">Remove</button>`);
+    tickerDiv.append(`<button class="remove-btn btn btn-outline-success" data-ticker="${ticker}">Remove</button>`);
     // tickerDiv.append(`<div class="ticker-price"></div>`);
     $("#tickers-grid").append(tickerDiv);
 }
