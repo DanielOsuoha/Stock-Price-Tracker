@@ -1,7 +1,7 @@
 from flask import *
 import yfinance as yf
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder="templates")
 
 
 @app.route("/")
