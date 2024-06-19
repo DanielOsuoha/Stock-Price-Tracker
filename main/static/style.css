@@ -12,21 +12,21 @@
     transition: background-color 0.5s;
     background-color: #eee;
 }
-.light-red{
-    color: #FFCCCC;
+.dark-red{
+    color: #e20101;
 }
 
-.dark-red{
-    color: #FF0000;
+.red{
+    color: #e77676;
 }
 .gray{
     color: #808080;
 }
 .dark-green{
-    color: #008000;
+    color: #018c01;
 }
-.light-green{
-    color: #CCFFCC;
+.green{
+    color: #aaedaa;
 }
 
 #tickers-grid{
