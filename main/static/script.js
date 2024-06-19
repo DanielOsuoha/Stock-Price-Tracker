@@ -17,7 +17,7 @@ function startUpdateCycle(){
 
 $(document).ready(function(){
     tickers.forEach(function(ticker){
-        addTickerTOGrid();
+        addTickerTOGrid(ticker);
     });
     updatePrices();
 
