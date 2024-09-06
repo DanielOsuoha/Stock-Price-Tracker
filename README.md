@@ -26,15 +26,15 @@ The Stock and Crypto Price Tracker with Prediction is a web application develope
 
 ### Installation
 1. Clone the repository:
-   ``bash
+   ```bash
    git clone https://github.com/DanielOsuoha/Stock-Price-Tracker.git
    cd Stock-Price-Tracker
-   ``
+   ```
 3. Install the required dependencies:
-  ``bash
+  ```bash
    pip install -r requirements.txt
    Set up your environment variables or configuration file to include your API keys if necessary.
-   ``
+   ```
 
 4. Run the application:
   ``bash
