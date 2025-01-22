@@ -1,5 +1,6 @@
 from flask import *
 import yfinance as yf
+from stock_prediction import get_prediction
 
 app = Flask(__name__, template_folder="templates")
 
@@ -12,8 +13,13 @@ def index():
 def get_stock_data():
     ticker = request.get_json()["ticker"]
     data = yf.Ticker(ticker).history(period="1y")
-    return jsonify({"currentPrice": data.iloc[-1].Close,
-                    "openPrice": data.iloc[-1].Open})
+    prediction = get_prediction(ticker, 'USD')
+    
+    return jsonify({
+        "currentPrice": data.iloc[-1].Close,
+        "openPrice": data.iloc[-1].Open,
+        "predictedPrice": prediction
+    })
     
     
 if __name__ == '__main__':
