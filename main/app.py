@@ -13,7 +13,7 @@ def index():
 def get_stock_data():
     ticker = request.get_json()["ticker"]
     data = yf.Ticker(ticker).history(period="1y")
-    prediction = get_prediction(ticker, 'USD')
+    # prediction = get_prediction(ticker, 'USD')
     
     return jsonify({
         "currentPrice": data.iloc[-1].Close,

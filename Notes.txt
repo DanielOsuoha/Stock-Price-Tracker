@@ -10,3 +10,9 @@ it may be easiest to use 'pipx install xyz', which will manage a
 virtual environment for you. You can install pipx with
 
 brew install pipx
+
+
+
+When using localStorage, you might want to try localStorage.remove(<name of item to remove>) or localStorage.clear()
+
+to remove some defaults the browser might have stored from previous tests
