@@ -1,4 +1,4 @@
-var tickers = JSON.parse(localStorage.getItem("tickers")) || [];
+var tickers = JSON.parse(localStorage.getItem("tickers")) || ["AAPL", "MSFT", "GOOGL", "AMZN", "TSLA"];
 var lastPrices = {};
 var counter = 10;
 
