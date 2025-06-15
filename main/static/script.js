@@ -1,6 +1,6 @@
 var tickers = JSON.parse(localStorage.getItem("tickers")) || ["AAPL", "GOOGL", "AMZN", "MSFT", "TSLA"];
 var lastPrices = {};
-var counter = 10;
+var counter = 15;
 
 function startUpdateCycle(){
     updatePrices();
@@ -9,19 +9,17 @@ function startUpdateCycle(){
         $('#counter').text(counter)
         if(counter === 0){
             updatePrices();
-            counter = 30;
+            counter = 15;
         }
     }, 1000);
 
 }
 
 $(document).ready(function(){
-    console.log(tickers)
-    console.log("Document is ready");
     tickers.forEach(function(ticker){
         addTickerTOGrid(ticker);
     });
-    // updatePrices();
+    updatePrices();
 
     $("#add-ticker-form").submit(function(event) {
         event.preventDefault();
@@ -35,7 +33,7 @@ $(document).ready(function(){
             addTickerTOGrid(ticker);
         }
         $("#new-ticker").val("");
-        // updatePrices();
+        updatePrices();
     });
 
     $("#tickers-grid").on("click", ".remove-btn", function(){
@@ -45,7 +43,7 @@ $(document).ready(function(){
         $(`#${tickerTorRemove}`).remove();
     });
     
-    // startUpdateCycle();
+    startUpdateCycle();
 
 });
 
@@ -53,8 +51,8 @@ function addTickerTOGrid(ticker){
     var tickerDiv = $(`<div class="stock-box" id="${ticker}"></div>`);
     tickerDiv.append(`<h3>${ticker}</h3>`);
     tickerDiv.append(`<p id="${ticker}-price"></p> <p id="${ticker}-pct"></p>`);
+    tickerDiv.append(`<p id="${ticker}-prediction"></p>`)
     tickerDiv.append(`<button class="remove-btn btn btn-outline-success" data-ticker="${ticker}">Remove</button>`);
-    // tickerDiv.append(`<div class="ticker-price"></div>`);
     $("#tickers-grid").append(tickerDiv);
 }
 
@@ -68,6 +66,11 @@ function updatePrices() {
             dataType: "json",
             success: function(data) {
                 var changePercent = ((data.currentPrice - data.openPrice)/ data.openPrice) * 100;
+                var predictedPrice = data.predictedPrice;
+                console.log(predictedPrice);
+                var predictionChangePercent = ((predictedPrice - data.currentPrice) / data.currentPrice) * 100;
+                var predictionColorClass = predictionChangePercent >= 0 ? 'dark-green' : 'red';
+
                 var colorClass;
                 if (changePercent < 0){
                     colorClass ='red';
@@ -80,6 +83,9 @@ function updatePrices() {
                 $(`#${ticker}-pct`).text(`${changePercent.toFixed(2)}%`);
                 $(`#${ticker}-price`).removeClass('dark-red red gray green dark-green').addClass(colorClass);
                 $(`#${ticker}-pct`).removeClass('dark-red red gray green dark-green').addClass(colorClass);
+                var directionArrow = predictionChangePercent >= 0 ? "↑" : "↓";
+                $(`#${ticker}-prediction`).text(`Tomorrow's Prediction: $${predictedPrice.toFixed(2)} ${directionArrow} (${Math.abs(predictionChangePercent).toFixed(2)}%)`);
+                $(`#${ticker}-prediction`).removeClass('dark-red red gray green dark-green').addClass(predictionColorClass);
 
                 var flashClass;
                 if (lastPrices[ticker] > data.currentPrice){
