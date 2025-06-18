@@ -1,13 +1,13 @@
 # 📈 Stock and Crypto Price Tracker with Prediction
 
-## 🌟 Overview
+## Overview
 The **Stock and Crypto Price Tracker with Prediction** is a powerful web application built using Flask and Python. It enables users to track real-time prices of stocks and cryptocurrencies while integrating predictive modeling to forecast future prices using advanced machine learning techniques. The application features a responsive frontend that enhances user experience and offers rich data visualization.
 
-## 🚀 Features
-- **📊 Real-Time Tracking**: Monitor current stock and cryptocurrency prices using data from the Yahoo Finance API.
-- **🔮 Predictive Analytics**: Leverage TensorFlow to build predictive models that forecast crypto prices based on historical market data.
-- **📱 Responsive Frontend**: A user-friendly interface developed with HTML, CSS, JavaScript, and jQuery for real-time updates and alerts.
-- **🔔 Custom Alerts**: Users can set up alerts for price changes and significant market events, ensuring they never miss an opportunity.
+##  Features
+- ** Real-Time Tracking**: Monitor current stock and cryptocurrency prices using data from the Yahoo Finance API.
+- ** Predictive Analytics**: Leverage TensorFlow to build predictive models that forecast crypto prices based on historical market data.
+- ** Responsive Frontend**: A user-friendly interface developed with HTML, CSS, JavaScript, and jQuery for real-time updates and alerts.
+- ** Custom Alerts**: Users can set up alerts for price changes and significant market events, ensuring they never miss an opportunity.
 
 ## ⚙️ Technologies Used
 - **Backend**: Python, Flask
