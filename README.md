@@ -17,14 +17,14 @@ The **Stock and Crypto Price Tracker with Prediction** is a powerful web applica
 
 ## 🏁 Getting Started
 
-### 🛠️ Prerequisites
+### Prerequisites
 - Python 3.x
 - Flask
 - TensorFlow
 - jQuery (included via CDN or installed locally)
 - Any additional libraries as specified in `requirements.txt`
 
-### 📥 Installation
+### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/DanielOsuoha/Stock-Price-Tracker.git
